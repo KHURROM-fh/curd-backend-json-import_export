@@ -1,5 +1,9 @@
 from django.db import models
 
+
+"""TRADECODE_LIST= [
+    ('',''),
+] """
 class StockData(models.Model):
     date = models.CharField(max_length=50)
     tradecode = models.CharField(max_length=50)
@@ -13,3 +17,4 @@ class StockData(models.Model):
         return f"{self.tradecode} - {self.date}"
     class Meta:
         verbose_name_plural= "Stork Data"
+        ordering = ['date']
